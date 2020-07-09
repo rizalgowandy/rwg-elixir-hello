@@ -11,10 +11,11 @@ database_url =
     For example: ecto://USER:PASS@HOST/DATABASE
     """
 
-config :rwg_hello, RwgHello.Repo,
-  # ssl: true,
-  url: database_url,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
+config :rwg_hello,
+       RwgHello.Repo,
+       ssl: true,
+       url: database_url,
+       pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
 secret_key_base =
   System.get_env("SECRET_KEY_BASE") ||
@@ -23,12 +24,15 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-config :rwg_hello, RwgHelloWeb.Endpoint,
-  http: [
-    port: String.to_integer(System.get_env("PORT") || "4000"),
-    transport_options: [socket_opts: [:inet6]]
-  ],
-  secret_key_base: secret_key_base
+config :rwg_hello,
+       RwgHelloWeb.Endpoint,
+       http: [
+         port: String.to_integer(System.get_env("PORT") || "4000"),
+         transport_options: [
+           socket_opts: [:inet6]
+         ]
+       ],
+       secret_key_base: secret_key_base
 
 # ## Using releases (Elixir v1.9+)
 #
