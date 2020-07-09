@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:10.6
+    container_name: postgres_rwg_hello
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=rwg_hello_dev
+    tty: true
+    volumes:
+      - ./_build/dev/db:/var/lib/postgresql/data
