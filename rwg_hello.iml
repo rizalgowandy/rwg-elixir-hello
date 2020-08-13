@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="ELIXIR_MODULE" version="4">
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/_build/dev/lib/rwg_hello/ebin" />
     <output-test url="file://$MODULE_DIR$/_build/test/lib/rwg_hello/ebin" />
